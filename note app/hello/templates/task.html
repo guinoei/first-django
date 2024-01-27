@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+<div class="card">
+    <div class="card-header">
+    <strong>Created At: </strong><i>{{user_task.created_at}}</i> 
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{user_task.title}}</h5>
+      <p class="card-text">{{user_task.description}}</p>            
+      <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+      <a href="{% url 'update_task' user_task.id %}" class="btn btn-primary">Update</a>
+      <a href="{% url 'delete_task' user_task.id %}" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
